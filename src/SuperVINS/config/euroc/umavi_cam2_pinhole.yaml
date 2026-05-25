@@ -1,0 +1,16 @@
+%YAML:1.0
+---
+model_type: PINHOLE
+camera_name: uma_cam2
+image_width: 752
+image_height: 480
+distortion_parameters:
+   k1: -1.1566634307511932e-01
+   k2: 8.9876999685287520e-02
+   p1: -5.5827940209186630e-04
+   p2: -1.8357664315637888e-03
+projection_parameters:
+   fx: 6.0574557772998530e+02
+   fy: 6.0797354149955750e+02
+   cx: 3.7036057368013400e+02
+   cy: 2.0606348100221066e+02

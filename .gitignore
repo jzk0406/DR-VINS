@@ -1,0 +1,44 @@
+﻿# ROS / Catkin
+build/
+devel/
+install/
+log/
+logs/
+.catkin_tools/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Runtime outputs
+vio_output/
+pose_graph_output/
+time_consumption/
+output/
+results/raw/
+*_keypoints.txt
+pose_graph.txt
+*.log
+
+# Datasets
+datasets/
+*.bag
+*.db3
+*.mcap
+
+# Large media
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

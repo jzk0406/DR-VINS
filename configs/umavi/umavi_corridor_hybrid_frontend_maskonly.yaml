@@ -1,0 +1,73 @@
+%YAML:1.0
+
+# common parameters
+imu: 1
+num_of_cam: 1
+
+imu_topic: "/imu0"
+image0_topic: "/cam0/image_raw"
+image1_topic: "/cam1/image_raw"
+
+cam0_calib: "umavi_cam2_pinhole.yaml"
+cam1_calib: "cam1_mei.yaml"
+image_width: 752
+image_height: 480
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 1
+
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [-0.9996891001069981, -0.024321238097913023, 0.005493678607751144, 0.11425322792996404,
+           0.024372821606514775, -0.9996575482196979, 0.009526376767667806, -0.013218431734117795,
+           0.005260104010154635, 0.009657311466820284, 0.9999395319923278, -0.03159608818108305,
+           0, 0, 0, 1]
+
+# Multiple thread support
+multiple_thread: 1
+
+# feature tracker parameters
+max_cnt: 150
+min_dist: 7
+
+# matcher parameters
+matche_score_threshold: 0.7
+ransacReprojThreshold: 0.5
+
+freq: 10
+F_threshold: 1.0
+show_track: 1
+flow_back: 1
+
+# optimization parameters
+max_solver_time: 0.04
+max_num_iterations: 8
+keyframe_parallax: 10.0
+
+# IMU parameters (from imu-xsens.yaml)
+acc_n: 0.1
+gyr_n: 0.01
+acc_w: 0.001
+gyr_w: 0.0001
+g_norm: 9.81007
+
+# time offset
+estimate_td: 0
+td: 0.00534915928352496
+
+# output path
+output_path: "/home/jzk/results/umavi_hybrid_loop/corridor-eng_LowText_maskonly/frontend"
+
+# loop closure parameters
+load_previous_pose_graph: 0
+pose_graph_save_path: "/home/jzk/results/umavi_hybrid_loop/corridor-eng_LowText_maskonly/pose_graph/"
+save_image: 1
+
+# deep learning weights
+extractor_weight_path: "SuperVINS/supervins_estimator/weights_dpl/superpoint.onnx"
+matcher_weight_path: "SuperVINS/supervins_estimator/weights_dpl/superpoint_lightglue_fused_cpu.onnx"
+
+# Bag of Words path
+voc_relative_path: "SuperVINS/supervins_loop_fusion/src/ThirdParty/Voc/superpoint1.yml.gz"

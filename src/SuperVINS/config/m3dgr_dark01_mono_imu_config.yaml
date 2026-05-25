@@ -1,0 +1,78 @@
+%YAML:1.0
+
+#common parameters
+#support: 1 imu 1 cam; 1 imu 2 cam: 2 cam; 
+imu: 1         
+num_of_cam: 1
+
+imu_topic: "/camera/imu"
+image0_topic: "/camera/color/image_raw"
+image1_topic: "/cam1/image_raw"
+
+cam0_calib: "m3dgr_dark01_cam0_pinhole.yaml"
+cam1_calib: "cam1_mei.yaml"
+image_width: 752
+image_height: 480
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 1
+                        # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
+
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [1.0, 0.0, 0.0, 0.0,
+          0.0, 1.0, 0.0, 0.0,
+          0.0, 0.0, 1.0, 0.0,
+          0.0, 0.0, 0.0, 1.0]
+
+#Multiple thread support
+multiple_thread: 1
+
+#feature traker paprameters
+# max feature number in feature tracking
+max_cnt: 150
+
+# min distance between two features 
+min_dist: 30
+
+#matcher parameters
+matche_score_threshold: 0.7
+ransacReprojThreshold: 0.5
+
+freq: 10
+F_threshold: 1.0
+show_track: 1
+flow_back: 1            # perform forward and backward optical flow to improve feature tracking accuracy
+
+#optimization parameters
+max_solver_time: 0.04
+max_num_iterations: 8
+keyframe_parallax: 10.0
+
+#imu parameters       The more accurate parameters you provide, the better performance
+acc_n: 1.2820343288774358e-01
+gyr_n: 2.1309311394972831e-02
+acc_w: 1.3677912958097768e-02
+gyr_w: 3.6603917782528627e-04
+g_norm: 9.805
+
+#unsynchronization parameters
+estimate_td: 0
+td: 0.0
+
+# Path to vio output results
+output_path: "/home/jzk/datasets/M3DGR_results/Dark01/supervins_gpu"
+
+#loop closure parameters
+load_previous_pose_graph: 0        # load and reuse previous pose graph; load from 'pose_graph_save_path'
+pose_graph_save_path: "/home/jzk/datasets/M3DGR_results/Dark01/supervins_gpu"
+save_image: 1                   # save image in pose graph for visualization prupose; you can close this function by setting 0 
+
+#deep learning feature points weights
+extractor_weight_path: "SuperVINS/supervins_estimator/weights_dpl/superpoint.onnx"
+matcher_weight_path: "SuperVINS/supervins_estimator/weights_dpl/superpoint_lightglue_fused_cpu.onnx"
+
+# Bag of Words path
+voc_relative_path: "SuperVINS/supervins_loop_fusion/src/ThirdParty/Voc/superpoint1.yml.gz"
