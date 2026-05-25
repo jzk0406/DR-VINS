@@ -12,9 +12,11 @@ Release page:
 
 ## EuRoC
 
-* \- \[V2\_02 VINS-Fusion successful run](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
-* \- \[V2\_03 VINS-Fusion successful run](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
-* \- \[V2\_03 DR-VINS Loop](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
+\- \[V2\_02 VINS-Fusion successful run](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
+
+\- \[V2\_03 VINS-Fusion successful run](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
+
+\- \[V2\_03 DR-VINS Loop](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
 
 ## UMA-VI
 
