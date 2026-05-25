@@ -498,19 +498,12 @@ media/screenshots/
 
 
 
-Demo videos are listed in:
 
 
+Demo videos are provided through GitHub Releases:
 
-```text
-
-media/demo\_links.md
-
-```
-
-
-
-\---
+- [Demo video list](media/demo_links.md)
+- [DR-VINS Demo Videos Release](https://github.com/jzk0406/DR-VINS/releases/tag/v1.0-demo)
 
 
 
