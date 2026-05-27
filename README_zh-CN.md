@@ -228,35 +228,37 @@ python3 scripts/plotting/plot_traj_with_inset.py \
 
 ## 8. 实验结果展示
 
-本节展示 DR-VINS 在 EuRoC 和 UMA-VI 数据集上的代表性实验结果。
+本节展示 DR-VINS 在 EuRoC 和 UMA-VI 数据集上的代表性实验结果，包括 RViz 运行截图、轨迹对比图和部分定量结果。
 
-### 8.1 EuRoC 轨迹对比
+### 8.1 RViz 运行截图
 
-#### EuRoC MH01
+下图展示了系统在 RViz 中的运行效果，包括轨迹输出、点云可视化、图像特征跟踪和回环相关结果。
 
-![MH01 trajectory comparison](results/trajectory_figures/MH01_inset_right_VINS_vs_DR-VINS.png)
+#### VINS-Fusion 与 DR-VINS 运行效果对比
+
+![VINS-Fusion vs DR-VINS RViz comparison](media/screenshots/rviz_vinsfusion_drvins_comparison.png)
+
+#### VINS-Fusion 失效示例
+
+![VINS-Fusion failure case](media/screenshots/rviz_vinsfusion_failure_case.png)
+
+#### DR-VINS 稳定运行示例
+
+![DR-VINS stable running case](media/screenshots/rviz_drvins_stable_case.png)
+
+从 RViz 可视化结果可以直观看出，在退化视觉场景中，传统方法更容易出现明显轨迹漂移甚至失效，而 DR-VINS 在相关序列中能够保持更好的轨迹连续性和运行稳定性。
+
+### 8.2 轨迹对比图
+
+下图给出了部分代表性序列的轨迹对比结果。局部放大视图能够更清楚地展示估计轨迹与真值轨迹之间的差异。
 
 #### EuRoC MH05
 
-![MH05 trajectory comparison](results/trajectory_figures/MH05_inset_right_VINS_vs_DR-VINS.png)
+![EuRoC MH05 local trajectory comparison](results/trajectory_figures/euroc_mh05_local_zoom.png)
 
 #### EuRoC V1_03
 
-![V1_03 trajectory comparison](results/trajectory_figures/V1_03_inset_right_VINS_vs_DR-VINS.png)
-
-### 8.2 UMA-VI 退化场景轨迹对比
-
-#### UMA-VI corridor-eng_LowText
-
-![corridor-eng_LowText trajectory comparison](results/trajectory_figures/corridor-eng_LowText_VINS-Fusion_vs_DR-VINS_trajectories.png)
-
-#### UMA-VI parking-csc1_LowText
-
-![parking-csc1_LowText trajectory comparison](results/trajectory_figures/parking-csc1_LowText_VINS-Fusion_vs_DR-VINS_trajectories.png)
-
-#### UMA-VI conference-csc2_IllChange
-
-![conference-csc2_IllChange trajectory comparison](results/trajectory_figures/conference-csc2_IllChange_relaxed_clean_fixed_legend_trajectories.png)
+![EuRoC V1_03 local trajectory comparison](results/trajectory_figures/euroc_v103_local_zoom.png)
 
 ### 8.3 定量结果
 

@@ -253,37 +253,35 @@ python3 scripts/plotting/plot_traj_with_inset.py \
 
 This section presents representative qualitative and quantitative results of DR-VINS on EuRoC and UMA-VI datasets.
 
-### 8.1 EuRoC Trajectory Comparison
+### 8.1 RViz Running Screenshots
 
-Representative trajectory comparison results on EuRoC sequences are shown below. Local zoom-in views are included to better illustrate trajectory consistency in detailed regions.
+The following screenshots show RViz visualization results, including trajectory output, point cloud visualization, feature tracking images, and loop-related results.
 
-#### EuRoC MH01
+#### VINS-Fusion vs DR-VINS RViz Comparison
 
-![MH01 trajectory comparison](results/trajectory_figures/MH01_inset_right_VINS_vs_DR-VINS.png)
+![VINS-Fusion vs DR-VINS RViz comparison](media/screenshots/rviz_vinsfusion_drvins_comparison.png)
+
+#### VINS-Fusion Failure Case
+
+![VINS-Fusion failure case](media/screenshots/rviz_vinsfusion_failure_case.png)
+
+#### DR-VINS Stable Running Case
+
+![DR-VINS stable running case](media/screenshots/rviz_drvins_stable_case.png)
+
+These RViz screenshots provide an intuitive comparison between the baseline method and DR-VINS in challenging sequences. The baseline method may suffer from severe drift or failure, while DR-VINS can maintain better trajectory continuity in degraded visual scenes.
+
+### 8.2 Trajectory Comparison
+
+Representative trajectory comparison results are shown below. Local zoom-in views are included to better illustrate the difference between the estimated trajectories and the ground truth.
 
 #### EuRoC MH05
 
-![MH05 trajectory comparison](results/trajectory_figures/MH05_inset_right_VINS_vs_DR-VINS.png)
+![EuRoC MH05 local trajectory comparison](results/trajectory_figures/euroc_mh05_local_zoom.png)
 
 #### EuRoC V1_03
 
-![V1_03 trajectory comparison](results/trajectory_figures/V1_03_inset_right_VINS_vs_DR-VINS.png)
-
-### 8.2 UMA-VI Degraded Scene Results
-
-Representative results on UMA-VI degraded visual sequences are shown below. These sequences include low-texture scenes and illumination-change scenes.
-
-#### UMA-VI corridor-eng_LowText
-
-![corridor-eng_LowText trajectory comparison](results/trajectory_figures/corridor-eng_LowText_VINS-Fusion_vs_DR-VINS_trajectories.png)
-
-#### UMA-VI parking-csc1_LowText
-
-![parking-csc1_LowText trajectory comparison](results/trajectory_figures/parking-csc1_LowText_VINS-Fusion_vs_DR-VINS_trajectories.png)
-
-#### UMA-VI conference-csc2_IllChange
-
-![conference-csc2_IllChange trajectory comparison](results/trajectory_figures/conference-csc2_IllChange_relaxed_clean_fixed_legend_trajectories.png)
+![EuRoC V1_03 local trajectory comparison](results/trajectory_figures/euroc_v103_local_zoom.png)
 
 ### 8.3 Quantitative Results
 
@@ -298,8 +296,7 @@ Representative ATE RMSE results are summarized below.
 | UMA-VI | third-floor-csc1_IllChange | failed | failed | 0.063 | 0.042 |
 | UMA-VI | two-floors-csc1_InOut | failed | failed | 1.513 | 0.088 |
 
-More trajectory figures are provided in [`results/trajectory_figures`](results/trajectory_figures).
----
+More trajectory figures are provided in [`results/trajectory_figures`](results/trajectory_figures).---
 
 ## 9. Demo Videos
 
